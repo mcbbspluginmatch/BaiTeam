@@ -25,6 +25,8 @@ public class BaiListener implements Listener {
 				return;
 			}
 			event.setCancelled(true);
+			
+			// 无文档、未知指令执行操作！
 			Bukkit.dispatchCommand(player, "/baiteam game play"+event.getMessage().replace("/dxl play", ""));
 			return;
 		}
