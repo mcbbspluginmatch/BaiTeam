@@ -153,6 +153,7 @@ public class BaiTeamCommand implements TabCompleter, CommandExecutor {
 				return true;
 			}
 			case "申请入队": {
+				// 报错信息极端不友好
 				if (args.length < 2 || TeamManager.getTeam(args[1]) == null) {
 					return false;
 				}
