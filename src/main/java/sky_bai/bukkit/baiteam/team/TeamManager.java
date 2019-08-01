@@ -278,6 +278,7 @@ public class TeamManager {
 		playerSendMessage(player, "Team.Join.Invite.No", "你拒绝了队伍 [&{0}] 的邀请", team.getTeamName(), leader.getName(), player.getName());
 	}
 
+	//迷之操作 —— mimimis
 	private static void playerSendMessage(Player player, String key, @Nonnull String string, @Nonnull String... strings) {
 		if (string == null && strings == null) {
 			player.sendMessage(MessageConfig.BTMessage(BaiTeam.getConfig(ConfigType.Message).getString(key)));
