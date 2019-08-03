@@ -46,6 +46,7 @@ public class BaiTeamCommand implements TabCompleter, CommandExecutor {
 				switch (str2) {
 				case "play": {
 					if (args.length < 3 || dungeonsXL.getDWorldCache().getResourceByName(args[2]) == null || TeamManager.getTeam(player, true) == null || dungeonsXL.getDPlayerCache().getByPlayer(player) instanceof DInstancePlayer) {
+						// 测试代码没删干净？ —— 754503921
 						System.out.println(args.length);
 						System.out.println(dungeonsXL.getDWorldCache().getResourceByName(args[2]));
 						System.out.println(TeamManager.getTeam(player, true));
@@ -80,7 +81,7 @@ public class BaiTeamCommand implements TabCompleter, CommandExecutor {
 						}
 						return true;
 					}
-					case "Main": {
+					case "Main": { // 严格的大小写判断 —— 754503921
 						TeamGui.getGui().openMainGui(player);
 						return true;
 					}
@@ -94,7 +95,7 @@ public class BaiTeamCommand implements TabCompleter, CommandExecutor {
 					}
 					case "TeamList": {
 						int int1 = 0;
-						if (args.length >= 4 && Integer.valueOf(args[3]) != null) {
+						if (args.length >= 4 && Integer.valueOf(args[3]) != null) { // valueOf 是直接抛出异常不是返回 null —— 754503921
 							int1 = Integer.valueOf(args[3]);
 						}
 						if (TeamManager.getTeams().isEmpty()) {

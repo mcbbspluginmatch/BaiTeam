@@ -43,6 +43,7 @@ public class BaiTeamMain extends JavaPlugin {
 	}
 
 	public String getMCVersion() {
+		//                                                  // split("\\.") —— 754503921
 		return Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
 	}
 
@@ -55,7 +56,7 @@ public class BaiTeamMain extends JavaPlugin {
 		configMap.put(ConfigType.Message, new MessageConfig().getConfig());
 	}
 
-	private Boolean setBookGuiOpenBook() {
+	private Boolean setBookGuiOpenBook() { // 非通用的版本实现 —— 754503921
 		switch (getMCVersion()) {
 		case "v1_11_R1":
 			BookGui.setBookGuiOpenBookNMS(new BookGuiOpenBook_v1_11_R1());

@@ -48,6 +48,9 @@ public class BaiListener implements Listener {
 
 	@EventHandler
 	public void playerQuitServer(PlayerQuitEvent event) {
+		// 玩家引用并不止在离开服务器时需要移除
+		// 在玩家死亡 / 切换世界等情况下都会重新生成新的 Player
+		// 更好的方法是保存玩家的 UUID —— 754503921
 		Player player = event.getPlayer();
 		if (TeamManager.getTeam(player, true) != null) {
 			TeamManager.getTeams().remove(TeamManager.getTeam(player, true));

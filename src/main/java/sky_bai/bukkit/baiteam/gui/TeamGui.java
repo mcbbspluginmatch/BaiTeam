@@ -21,6 +21,8 @@ public class TeamGui {
 		return tGui;
 	}
 
+	// 大量硬编码 —— 754503921
+
 	public void openMainGui(Player player) {
 		BookGui bookGui = BookGui.getBookGui();
 		TextComponent a1 = new TextComponent();

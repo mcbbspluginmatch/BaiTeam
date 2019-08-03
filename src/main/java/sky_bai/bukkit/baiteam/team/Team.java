@@ -8,6 +8,10 @@ import org.bukkit.entity.Player;
 public class Team {
 	// 队长
 	private Player leader;
+
+	// 保存 Player 引用，并且没有有效的移除
+	// 永远不要保存一个类似的引用 —— 754503921
+
 	// 队员
 	private List<Player> members;
 	// 队伍名

@@ -44,7 +44,7 @@ public class TeamManager {
 
 	public static Team getTeam(Player player, Boolean onLeader) {
 		for (Team team : TEAMS) {
-			if (onLeader && team.getLeader() == player) {
+			if (onLeader && team.getLeader() == player) { // 当玩家死亡/更换世界后该引用失效 —— 754503921
 				return team;
 			}
 			if (!onLeader && team.getMembers().contains(player)) {
